@@ -16,8 +16,14 @@ div {
 text-align: center;
 }
 
-h1,h2 {
-  color: white
+h2 {
+  color: rgb(241, 241, 241);
+  font-family:'Courier New', Courier, monospace;
+  text-shadow: 
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+  -1px  1px 0 #000,
+   1px  1px 0 #000; /* Black outline */
 }
 
 button{
@@ -31,5 +37,10 @@ button{
 }
 
 h1 {
-  font-style:italic;
+  color:goldenrod;
+}
+
+p {
+  color: white;
+  font-family:'Arial';
 }

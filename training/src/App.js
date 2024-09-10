@@ -5,6 +5,8 @@ function App() {
 /* You Variables*/
 const [youClass, setYouClass] = useState('');  
 const [youRune, setYouRune] = useState('');  
+const [youIgnite, setYouIgnite] = useState('');  
+
 /* const [lane, setLane] = useState('');  */ /* Lane */
 
 /* Enemy Variables*/
@@ -12,7 +14,7 @@ const [enemyClass, setEnemyClass] = useState('');
 const [enemyRune, setEnemyRune] = useState('');  
 const [enemyIgnite, setEnemyIgnite] = useState('');  
 
-/* Your lane 
+/* Your Lane Functions 
 const youTopButton = () => { 
   setLane('Top');
 }
@@ -33,7 +35,7 @@ const youSupportButton = () => {
   setLane('Support');
 } */
 
-/* Your class */
+/* Your Class Functions */
 const youMeleeButton = () => {  
   setYouClass('Melee');
 }
@@ -42,7 +44,7 @@ const youRangedButton = () => {
   setYouClass('Ranged');
 }
 
-/* Your runes */ 
+/* Your Runes Functions*/ 
 const youRunePTA = () => { 
   setYouRune('Press the Attack');
 }
@@ -56,7 +58,7 @@ const youRuneElectrocute = () => {
 }
 
 const youRuneArcaneComet = () => {
-  setYouRune('Arcane Cimet');
+  setYouRune('Arcane Comet');
 }
 
 const youRuneSummonAery = () => { 
@@ -67,16 +69,25 @@ const youRuneFirstStrike = () => {
   setYouRune('First Strike');
 }
 
-/* Enemy Class */
+/* Your Ignite Functions*/ 
+const youIgniteYesButton = () => { 
+  setYouIgnite('Yes');
+}
+
+const youIgniteNoButton = () => { 
+  setYouIgnite('No');
+}
+
+/* Enemy Class Functions*/
 const enemyMeleeButton = () => {  
   setEnemyClass('Melee');
 }
 
 const enemyRangedButton = () => { 
-  setEnemyClass('Ranged');
+  setEnemyClass('Ranged(Poke)');
 }
 
-/* Enemy Runes */
+/* Enemy Runes Functions */
 const enemyRunePTA = () => { 
   setEnemyRune('Press the Attack');
 }
@@ -101,7 +112,7 @@ const enemyRuneFirstStrike = () => {
   setEnemyRune('First Strike');
 }
 
-/* Enemy ignite */
+/* Enemy Ignite Functions */
 const enemyIgniteYesButton = () => { 
   setEnemyIgnite('Yes');
 }
@@ -114,12 +125,12 @@ const enemyIgniteNoButton = () => {
   return (
     <div>
       <h1>You</h1> 
-      <h2>Which lane are you playing?</h2>
+      {/* <h2>Which lane are you playing?</h2> 
       <button onClick={youTopButton}>Top</button>
       <button onClick={youJungleButton}>Jungle</button>
       <button onClick={youMidButton}>Mid</button>
       <button onClick={youAdcButton}>ADC</button>
-      <button onClick={youSupportButton}>Support</button>
+      <button onClick={youSupportButton}>Support</button> */}
 
       <h2>Are you Melee or Ranged?</h2>
       <button onClick={youMeleeButton}>Melee</button>
@@ -133,31 +144,36 @@ const enemyIgniteNoButton = () => {
       <button onClick={youRuneSummonAery}>Summon Aery</button>
       <button onClick={youRuneFirstStrike}>First Strike</button>
 
+      <h2>Do you have ignite?</h2>
+      <button onClick={youIgniteYesButton}>Yes</button>
+      <button onClick={youIgniteNoButton}>No</button>
+
       <h1>Enemy</h1>
-      <h2>Is your enemy Melee or Ranged?</h2>
+      <h2>Is your enemy Melee or Ranged(Poke)?</h2>
       <button onClick={enemyMeleeButton}>Melee</button>
       <button onClick={enemyRangedButton}>Ranged(Poke)</button>
 
       <h2>What runestone is your enemy playing?</h2>
-      <button onClick={enemyMeleeButton}>Press the Attack</button>
-      <button onClick={enemyRangedButton}>Conqueror</button>
-      <button onClick={enemyRangedButton}>Electrocute</button>
-      <button onClick={enemyRangedButton}>Arcane Comet</button>
-      <button onClick={enemyRangedButton}>Summon Aery</button>
-      <button onClick={enemyRangedButton}>First Strike</button>
-
+      <button onClick={enemyRunePTA}>Press the Attack</button>
+      <button onClick={enemyRuneConqueror}>Conqueror</button>
+      <button onClick={enemyRuneElectrocute}>Electrocute</button>
+      <button onClick={enemyRuneArcaneComet}>Arcane Comet</button>
+      <button onClick={enemyRuneSummonAery}>Summon Aery</button>
+      <button onClick={enemyRuneFirstStrike}>First Strike</button>
 
       <h2>Does your enemy have ignite?</h2>
-      <button onClick={enemyMeleeButton}>Yes</button>
-      <button onClick={enemyRangedButton}>No</button>
+      <button onClick={enemyIgniteYesButton}>Yes</button>
+      <button onClick={enemyIgniteNoButton}>No</button>
       
-      <p>Your lane: {lane}</p>
-      <p>You are: {youClass} </p>
-      <p>Your runestone: {youRune}</p>
+      <h1>Matchup</h1>
+      <p><b>You are:</b> {youClass} </p>
+      <p><b>Your runestone:</b> {youRune}</p>
+      <p><b>You have ignite:</b> {youIgnite}</p>
+      {/* <p>Your lane: {lane}</p> */}
       <br/>
-      <p>Enemy is: {enemyClass} </p>
-      <p>Enemy runestone: {enemyRune}</p>
-      <p>Enemy has ignite: {enemyIgnite}</p>
+      <p><b>Enemy is:</b> {enemyClass} </p>
+      <p><b>Enemy runestone:</b> {enemyRune}</p>
+      <p><b>Enemy has ignite:</b> {enemyIgnite}</p>
 
     </div>
   );
