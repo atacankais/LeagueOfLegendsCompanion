@@ -4,15 +4,15 @@ function App() {
 
 /* You Variables*/
 const [youClass, setYouClass] = useState('');  
-const [lane, setLane] = useState('');  
 const [youRune, setYouRune] = useState('');  
+/* const [lane, setLane] = useState('');  */ /* Lane */
 
 /* Enemy Variables*/
 const [enemyClass, setEnemyClass] = useState('');  
 const [enemyRune, setEnemyRune] = useState('');  
 const [enemyIgnite, setEnemyIgnite] = useState('');  
 
-/* Your lane */
+/* Your lane 
 const youTopButton = () => { 
   setLane('Top');
 }
@@ -31,7 +31,7 @@ const youAdcButton = () => {
 
 const youSupportButton = () => { 
   setLane('Support');
-}
+} */
 
 /* Your class */
 const youMeleeButton = () => {  
@@ -132,6 +132,7 @@ const enemyIgniteNoButton = () => {
       <button onClick={youRuneArcaneComet}>Arcane Comet</button>
       <button onClick={youRuneSummonAery}>Summon Aery</button>
       <button onClick={youRuneFirstStrike}>First Strike</button>
+
       <h1>Enemy</h1>
       <h2>Is your enemy Melee or Ranged?</h2>
       <button onClick={enemyMeleeButton}>Melee</button>
@@ -149,9 +150,14 @@ const enemyIgniteNoButton = () => {
       <h2>Does your enemy have ignite?</h2>
       <button onClick={enemyMeleeButton}>Yes</button>
       <button onClick={enemyRangedButton}>No</button>
-
+      
+      <p>Your lane: {lane}</p>
       <p>You are: {youClass} </p>
+      <p>Your runestone: {youRune}</p>
+      <br/>
       <p>Enemy is: {enemyClass} </p>
+      <p>Enemy runestone: {enemyRune}</p>
+      <p>Enemy has ignite: {enemyIgnite}</p>
 
     </div>
   );
